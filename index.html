@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Book Shop</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body onload="onInit()">
+    <p class="user-msg"></p>
+    <header>
+        <div class="header">
+            <h1 class="logo">My📚Shop</h1>
+
+            <button class="add-book-btn">Add Book</button>
+        </div>
+
+
+    </header>
+
+    <div class="search-bar">
+        <!-- <form action=""> -->
+        <label for="max-price">Max Price:
+            <input value="60" type="range" name="max-price"
+                onchange="this.title=this.value; onSetFilterBy({maxPrice: +this.value})" value="1" min="1" max="60">
+        </label>
+
+        <label for="max-rating">Max Rating:
+            <input value="1" type="range" name="max-rating"
+                onchange="this.title=this.value; onSetFilterBy({rating: +this.value})" min="1" max="10">
+        </label>
+        <label for="search">
+            Search By Title:
+            <input name="search" placeholder="Search" oninput="onSearchByTitle(this.value)" type="text">
+        </label>
+
+        <!-- <button class="search-btn">🔍</button> -->
+        <!-- </form> -->
+    </div>
+
+    <nav class="nav-sort">
+        <button class="nav-title sort-by">Title</button>
+        <button class="nav-price acend">Price</button>
+        <button class="nav-rating decend">Rating</button>
+    </nav>
+
+    <main>
+        <!-- book card -->
+        <!-- <div class="book-card">
+            <div class="book-card-details">
+
+                <div class="book-card-img">
+                    <img src="" alt="pic of book cover">
+                </div>
+
+                <div class="book-card-text">
+                    <h3 class="book-card-title">book title</h3>
+                    <p class="book-card-rating">rating</p>
+                    <p class="book-card-price">$0.00</p>
+                </div>
+
+            </div>
+
+            <div class="book-card-btns">
+                <button class="book-card-btn btn-details">ℹ️ Details</button>
+                <button class="book-card-btn btn-edit">✏️ Edit</button>
+                <button class="book-card-btn btn-delete">🗑️ Delete</button>
+            </div>
+
+        </div> -->
+
+    </main>
+
+    <footer>
+        <nav class="nav-pages-table">
+            <table>
+                <tr>
+                    <td class="nav-pages back">
+                        < </td>
+                    <td class="nav-pages">1</td>
+                    <td class="nav-pages">2</td>
+                    <td class="nav-pages">3</td>
+                    <td class="nav-pages forward disabled" onclick="onNextPage()">></td>
+                </tr>
+            </table>
+        </nav>
+        <h4>©️ Project by Elliot Sherman</h4>
+    </footer>
+    <script src="/js/services/util.service.js"></script>
+    <script src="/js/services/storage.service.js"></script>
+    <script src="/js/services/book.service.js"></script>
+    <script src="/js/books.controller.js"></script>
+</body>
+
+</html>
